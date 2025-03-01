@@ -127,9 +127,11 @@ const Header = () => {
             </section>
 
             {/* Get In Touch Button */}
-            <button className="bg-primary px-10 py-2 rounded-lg text-white font-medium">
-              Get Quote
-            </button>
+            <a href="#contact-us">
+              <button className="bg-primary px-10 py-2 rounded-lg text-white font-medium">
+                Get Quote
+              </button>
+            </a>
           </section>
         </header>
 
