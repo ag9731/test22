@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@keyframes slide-in {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 10rem;
+        /* Adjust based on w-40 (10rem in Tailwind) */
+    }
+}
+
+.animate-slide-in {
+    animation: slide-in 3s ease-in-out forwards;
+}
