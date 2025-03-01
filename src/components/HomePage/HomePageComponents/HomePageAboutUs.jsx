@@ -56,12 +56,14 @@ const HomePageAboutUs = () => {
               and digital marketing agency in Bangalore. Partner with us to
               elevate your brand and drive growth in the digital world.
             </p>
-            <div className="inline-flex items-center gap-3 md:gap-5 px-4 md:px-6 py-2 md:py-3 rounded-full bg-white mt-3 self-start">
-              <button className="font-semibold text-black font-poppins text-sm md:text-base">
-                Want To Know More
-              </button>
-              <AiFillQuestionCircle className="fill-primary text-lg md:text-xl" />
-            </div>
+            <a href="#contact-us">
+              <div className="inline-flex items-center gap-3 md:gap-5 px-4 md:px-6 py-2 md:py-3 rounded-full bg-white mt-3 self-start">
+                <button className="font-semibold text-black font-poppins text-sm md:text-base">
+                  Want To Know More
+                </button>
+                <AiFillQuestionCircle className="fill-primary text-lg md:text-xl" />
+              </div>
+            </a>
           </article>
 
           {/* Image */}

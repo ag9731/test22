@@ -38,12 +38,14 @@ const HomePageBanner = () => {
             applications. We also optimize your website with top-notch SEO
             techniques to increase visibility.
           </p>
-          <div className="flex items-center gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-primary mt-3">
-            <button className="font-semibold text-white font-poppins text-sm sm:text-base">
-              Enquiry Now
-            </button>
-            <AiFillQuestionCircle className="fill-white text-lg sm:text-xl" />
-          </div>
+          <a href="#contact-us">
+            <div className="flex items-center gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-primary mt-3">
+              <button className="font-semibold text-white font-poppins text-sm sm:text-base">
+                Enquiry Now
+              </button>
+              <AiFillQuestionCircle className="fill-white text-lg sm:text-xl" />
+            </div>
+          </a>
         </div>
 
         {/* Right Section (Bottom on mobile) */}
