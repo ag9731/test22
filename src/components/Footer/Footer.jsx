@@ -8,6 +8,7 @@ import {
   FaInstagram,
   FaLinkedin,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -53,6 +54,11 @@ const Footer = () => {
               <a href="#contact-us" className="hover:text-secondary">
                 Contact
               </a>
+            </li>
+            <li>
+              <Link to="/privacy-policy" className="hover:text-secondary">
+                Privacy Policy
+              </Link>
             </li>
           </ul>
         </div>
