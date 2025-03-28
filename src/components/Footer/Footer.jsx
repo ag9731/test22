@@ -27,7 +27,7 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-2">
             <FaEnvelope className="text-secondary" />
-            <p>info@gmail.com1</p>
+            <p>akashgoravanakoll@gmail.com</p>
           </div>
         </div>
 
