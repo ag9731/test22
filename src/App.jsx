@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Privacypolicy from "./components/PrivacyPolicy/Privacypolicy";
 import ScrollToTop from "./components/ScrollToTop";
+import FloatingSocialMedia from "./components/FloatingSocialMedia";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           </Routes>
           <Footer />
         </Router>
+        <FloatingSocialMedia/>
       </section>
     </>
   );

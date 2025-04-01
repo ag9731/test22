@@ -10,10 +10,10 @@ const HomePageContactUs = () => {
     e.preventDefault();
     emailjs
       .sendForm(
-        "your_service_id",
-        "your_template_id",
+        "service_x88g09g",
+        "template_fib1d7j",
         form.current,
-        "your_public_key"
+        "ml4dB1qI77ZyKN9LM"
       )
       .then(
         () => {
