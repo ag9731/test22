@@ -76,32 +76,41 @@ const Header = () => {
               <ul className="flex items-center gap-14">
                 <li>
                   {/* <a href="#">Home</a> */}
-                  <Link to="/">Home</Link>
+                  <Link to="/" className="uppercase">
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <a href="#about-us">About</a>
+                  <a href="#about-us" className="uppercase">
+                    About
+                  </a>
                 </li>
                 <li>
-                  <a href="#our-services">Services</a>
+                  <a href="#our-services" className="uppercase">
+                    Services
+                  </a>
                 </li>
                 <li>
                   <a
                     href="https://l.instagram.com/?u=https%3A%2F%2Flinktr.ee%2Fparvi_digital%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAadEGIEhI2himC7Zpt40a2HCC-5E0OuQDL-9eKMo7BNflSMXfnbO3RzGkSMS0Q_aem_UU-t6fbrRaClk_Eh6T60BA&e=AT1qowoNGC_E8XAwXFT9uJRRM3eN94-84E5I8yN_7Kby_sD5u5B7-NYkPlNNM3ysZasTqDCZhLY0dvNwrfMAjIZ6ATps1vQwxJUSDfnUrBJ7OhpIHLJ_CpY"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="uppercase"
                   >
                     Projects
                   </a>
                 </li>
                 <li>
-                  <a href="#contact-us">Contact</a>
+                  <a href="#contact-us" className="uppercase">
+                    Contact
+                  </a>
                 </li>
               </ul>
             </nav>
 
             {/* Search Bar */}
             <section className="relative" ref={searchRef}>
-              <div className="flex items-center relative">
+              {/* <div className="flex items-center relative">
                 <input
                   type="search"
                   className="px-2 py-1 border-[1px] rounded-md border-primary"
@@ -110,7 +119,7 @@ const Header = () => {
                   onChange={handleSearchBar}
                   onFocus={() => setShowResults(true)}
                 />
-              </div>
+              </div> */}
 
               {/* Display Filtered Results */}
               {showResults && (
@@ -166,20 +175,31 @@ const Header = () => {
             <section className="absolute top-32  left-0 w-full bg-slate-200 shadow-md p-5 flex flex-col items-center">
               <nav>
                 <ul className="flex flex-col gap-4 text-center">
-                  <li onClick={closeMenu}>
-                    <a href="#banner">Home</a>
+                  <li>
+                    {/* <a href="#">Home</a> */}
+                    <Link to="/" className="uppercase">
+                      Home
+                    </Link>
                   </li>
                   <li onClick={closeMenu}>
-                    <a href="#about-us">About</a>
+                    <a href="#about-us" className="uppercase">
+                      About
+                    </a>
                   </li>
                   <li onClick={closeMenu}>
-                    <a href="#our-services">Services</a>
+                    <a href="#our-services" className="uppercase">
+                      Services
+                    </a>
                   </li>
                   <li onClick={closeMenu}>
-                    <a href="#what-we-do">Projects</a>
+                    <a href="#what-we-do" className="uppercase">
+                      Projects
+                    </a>
                   </li>
                   <li onClick={closeMenu}>
-                    <a href="#contact-us">Contact</a>
+                    <a href="#contact-us" className="uppercase">
+                      Contact
+                    </a>
                   </li>
                 </ul>
               </nav>
