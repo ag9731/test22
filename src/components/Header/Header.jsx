@@ -83,7 +83,13 @@ const Header = () => {
                   <a href="#our-services">Services</a>
                 </li>
                 <li>
-                  <a href="#what-we-do">Projects</a>
+                  <a
+                    href="https://l.instagram.com/?u=https%3A%2F%2Flinktr.ee%2Fparvi_digital%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAadEGIEhI2himC7Zpt40a2HCC-5E0OuQDL-9eKMo7BNflSMXfnbO3RzGkSMS0Q_aem_UU-t6fbrRaClk_Eh6T60BA&e=AT1qowoNGC_E8XAwXFT9uJRRM3eN94-84E5I8yN_7Kby_sD5u5B7-NYkPlNNM3ysZasTqDCZhLY0dvNwrfMAjIZ6ATps1vQwxJUSDfnUrBJ7OhpIHLJ_CpY"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Projects
+                  </a>
                 </li>
                 <li>
                   <a href="#contact-us">Contact</a>

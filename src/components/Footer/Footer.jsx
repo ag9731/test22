@@ -7,6 +7,7 @@ import {
   FaTwitter,
   FaInstagram,
   FaLinkedin,
+  FaEnvelopeSquare,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -23,11 +24,18 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-2 mb-2">
             <FaPhoneAlt className="text-secondary" />
-            <p>9380128840</p>
+            <a href="tel:9380128840" className="text-1xl hover:text-secondary">
+              <p>9380128840</p>
+            </a>
           </div>
           <div className="flex items-center gap-2">
             <FaEnvelope className="text-secondary" />
-            <p>akashgoravanakoll@gmail.com</p>
+            <a
+              href="mailto:contact@parvidigital.com"
+              className="text-1xl hover:text-secondary"
+            >
+              <p>contact@parvidigital.com</p>
+            </a>
           </div>
         </div>
 
@@ -35,11 +43,11 @@ const Footer = () => {
         <div>
           <h2 className="text-xl font-semibold mb-3">Quick Links</h2>
           <ul className="space-y-2">
-            <li>
+            {/* <li>
               <Link to="/" className="hover:text-secondary">
                 Home
               </Link>
-            </li>
+            </li> */}
             <li>
               <a href="/#about-us" className="hover:text-secondary">
                 About Us
@@ -67,18 +75,30 @@ const Footer = () => {
         <div>
           <h2 className="text-xl font-semibold mb-3">Follow Us</h2>
           <div className="flex gap-4">
-            <a href="#" className="text-2xl hover:text-secondary">
+            <a
+              href="https://www.facebook.com/people/Parvi-Digital/61557411624105/"
+              className="text-2xl hover:text-secondary"
+            >
               <FaFacebook />
             </a>
-            <a href="#" className="text-2xl hover:text-secondary">
+            {/* <a href="#" className="text-2xl hover:text-secondary">
               <FaTwitter />
-            </a>
-            <a href="#" className="text-2xl hover:text-secondary">
+            </a> */}
+            <a
+              href="https://www.instagram.com/parvi_digital/"
+              className="text-2xl hover:text-secondary"
+            >
               <FaInstagram />
             </a>
-            <a href="#" className="text-2xl hover:text-secondary">
-              <FaLinkedin />
+            <a
+              href="mailto:contact@parvidigital.com"
+              className="text-2xl hover:text-secondary"
+            >
+              <FaEnvelopeSquare />
             </a>
+            {/* <a href="#" className="text-2xl hover:text-secondary">
+              <FaLinkedin />
+            </a> */}
           </div>
         </div>
       </div>

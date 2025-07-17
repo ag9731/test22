@@ -16,14 +16,14 @@ const Home = () => {
       <div id="about-us">
         <HomePageAboutUs />
       </div>
-      <div id="what-we-do">
+      <div id="our-services">
         <HomePageWhatWeDo />
+      </div>
+      <div id="what-we-do">
+        <HomePageWeDoWebsiteFor />
       </div>
       <div id="why-choose-us">
         <HomePageWhyChooseUs />
-      </div>
-      <div id="our-services">
-        <HomePageWeDoWebsiteFor />
       </div>
       <div id="faqs">
         <HomePageFaqs />

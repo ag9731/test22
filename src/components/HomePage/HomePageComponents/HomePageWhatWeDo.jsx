@@ -92,13 +92,31 @@ const HomePageWhatWeDo = () => {
     {
       id: 6,
       service: "Digital Marketing",
-      serviceIcon: <Laptop className="w-8 h-8" />,
+      // serviceIcon: <Laptop className="w-8 h-8" />,
       serviceDesc:
-        "Our web development company offers expert digital marketing services to enhance your online visibility and connect your brand with the right audience at the right time.",
+        "We provide comprehensive digital marketing services to grow your brand online, engage your audience, and drive conversions through data-driven strategies.",
       serviceList: [
-        "Search Engine Optimization",
-        "Social Media Marketing",
-        "Search Engine Marketing",
+        "Social Media Marketing (Facebook, Instagram, LinkedIn, etc.)",
+        "Google Ads & PPC Campaigns",
+        "Email Marketing Campaigns",
+        "Content Marketing & Strategy",
+        "Influencer & Affiliate Marketing",
+        "Online Reputation Management",
+      ],
+    },
+
+    {
+      id: 7,
+      service: "SEO Service",
+      // serviceIcon: <Laptop className="w-8 h-8" />,
+      serviceDesc:
+        "Our SEO services are designed to improve your website’s visibility on search engines, drive organic traffic, and help your business rank higher on Google.",
+      serviceList: [
+        "On-Page SEO Optimization",
+        "Off-Page SEO & Link Building",
+        "Technical SEO Audits",
+        "Keyword Research & Strategy",
+        "Google Analytics & Search Console Setup",
       ],
     },
   ];

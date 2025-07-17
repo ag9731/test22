@@ -551,7 +551,7 @@ const Privacypolicy = () => {
       </p>
       <ul>
         <li>
-          <p>By email: akashgoravanakoll@gmail.com</p>
+          <p>By email: contact@parvidigital.com</p>
         </li>
         <li>
           <p>
