@@ -3,6 +3,7 @@ import { AiOutlineSearch, AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import logo from "../../assets/parvi digital company bangalore logo.png";
 import GetQuote from "./GetQuote";
 import HeaderTopBar from "./HeaderTopBar";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const services = [
@@ -74,7 +75,8 @@ const Header = () => {
             <nav>
               <ul className="flex items-center gap-14">
                 <li>
-                  <a href="#">Home</a>
+                  {/* <a href="#">Home</a> */}
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
                   <a href="#about-us">About</a>
