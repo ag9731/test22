@@ -11,7 +11,7 @@ const HomePageContactUs = () => {
     emailjs
       .sendForm(
         "service_x88g09g",
-        "template_fib1d7j",
+        "template_vq1ugun",
         form.current,
         "ml4dB1qI77ZyKN9LM"
       )
@@ -64,6 +64,13 @@ const HomePageContactUs = () => {
               type="text"
               name="user_name"
               placeholder="Your Name"
+              required
+              className="p-2 border border-gray-300 rounded text-sm md:text-base"
+            />
+            <input
+              type="text"
+              name="user_mobile"
+              placeholder="Mobile Number"
               required
               className="p-2 border border-gray-300 rounded text-sm md:text-base"
             />
