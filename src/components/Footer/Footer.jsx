@@ -24,8 +24,8 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-2 mb-2">
             <FaPhoneAlt className="text-secondary" />
-            <a href="tel:9380128840" className="text-1xl hover:text-secondary">
-              <p>9380128840</p>
+            <a href="tel:9731761287" className="text-1xl hover:text-secondary">
+              <p>91 97317 61287</p>
             </a>
           </div>
           <div className="flex items-center gap-2">
