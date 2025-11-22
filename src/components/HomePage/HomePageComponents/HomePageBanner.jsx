@@ -1,11 +1,40 @@
 "use client";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import parviDigitalBannerImage from "../../../assets/Parvi_Digital_Marketing_Web_Design_Company_Bangalore/website-design-company-in-bangalore.png";
 import { AiFillQuestionCircle } from "react-icons/ai";
 import { motion } from "framer-motion";
+import HomePageContactUs from "../HomePageComponents/HomePageContactUs"
+
 
 const text = "WEB DESIGNING AND DIGITAL MARKETING AGENCY IN BANGALORE, INDIA.";
 
 const HomePageBanner = () => {
+
+  const form = useRef();
+    const [status, setStatus] = useState("");
+  
+    const sendEmail = (e) => {
+      e.preventDefault();
+      emailjs
+        .sendForm(
+          "service_x88g09g",
+          "template_vq1ugun",
+          form.current,
+          "ml4dB1qI77ZyKN9LM"
+        )
+        .then(
+          () => {
+            setStatus("Message sent successfully!");
+            form.current.reset();
+          },
+          (error) => {
+            setStatus("Failed to send message. Please try again.");
+            console.error(error.text);
+          }
+        );
+    };
+
   return (
     <section className="bg-primary bg-opacity-5 min-h-[80vh] py-12 md:py-16 lg:py-0 lg:h-[80vh] flex flex items-center">
       {/* Main Article */}
@@ -49,14 +78,67 @@ const HomePageBanner = () => {
         </div>
 
         {/* Right Section (Bottom on mobile) */}
-        <aside className="flex-1 flex justify-center items-center mt-8 lg:mt-0">
-          <figure className="w-full max-w-md lg:max-w-full">
+        <aside className="flex-1 flex justify-center items-center lg:mt-0">
+          {/* <figure className="w-full max-w-md lg:max-w-full">
             <img
               src={parviDigitalBannerImage || "/placeholder.svg"}
               alt="Website designing and development"
               className="max-w-60 lg:max-w-full md:max-w-full h-auto object-contain"
             />
-          </figure>
+          </figure> */}
+          {/* <HomePageContactUs/> */}
+          {/* Contact Form */}
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="flex flex-col gap-4  w-[70%]"
+          >
+            <input
+              type="text"
+              name="user_name"
+              placeholder="Your Name"
+              required
+              className="p-2 border border-[#2563eb] rounded text-sm md:text-base"
+            />
+            <input
+              type="text"
+              name="user_mobile"
+              placeholder="Mobile Number"
+              required
+              className="p-2 border border-[#2563eb] rounded text-sm md:text-base"
+            />
+            <input
+              type="email"
+              name="user_email"
+              placeholder="Your Email"
+              required
+              className="p-2 border border-[#2563eb] rounded text-sm md:text-base"
+            />
+            <select
+              name="user_service"
+              required
+              className="p-2 border border-[#2563eb] rounded text-sm md:text-base"
+            >
+              <option value="">Select a Service</option>
+              <option value="web_design">Web Design</option>
+              <option value="seo">SEO</option>
+              <option value="digital_marketing">Digital Marketing</option>
+              <option value="app_development">App Development</option>
+            </select>
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              required
+              className="p-2 border border-[#2563eb] rounded text-sm md:text-base"
+            ></textarea>
+            <button
+              type="submit"
+              className="bg-blue-600 text-white p-2 rounded hover:bg-blue-700 text-sm md:text-base"
+            >
+              Send Message
+            </button>
+            {status && <p className="text-sm text-green-600">{status}</p>}
+          </form>
         </aside>
       </article>
     </section>
