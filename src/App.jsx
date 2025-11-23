@@ -7,6 +7,9 @@ import {
 } from "react-router-dom";
 import ReactGA from "react-ga4";
 
+import "react-toastify/dist/ReactToastify.css"; // <-- Required
+import { ToastContainer } from "react-toastify"; // <-- Required
+
 import reactLogo from "./assets/react.svg";
 import Header from "./components/Header/Header";
 import Home from "./components/HomePage/Home";
@@ -15,11 +18,10 @@ import Privacypolicy from "./components/PrivacyPolicy/Privacypolicy";
 import ScrollToTop from "./components/ScrollToTop";
 import FloatingSocialMedia from "./components/FloatingSocialMedia";
 
-// ✅ Your Google Analytics 4 Tracking ID
+// Google Analytics
 const TRACKING_ID = "G-WYY911X1BH";
 ReactGA.initialize(TRACKING_ID);
 
-// ✅ Custom component to track route changes
 function GAListener() {
   const location = useLocation();
 
@@ -31,7 +33,6 @@ function GAListener() {
 }
 
 function App() {
-  // ✅ Track the initial page load
   useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: window.location.pathname });
   }, []);
@@ -42,12 +43,18 @@ function App() {
         <GAListener />
         <ScrollToTop />
         <Header />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/privacy-policy" element={<Privacypolicy />} />
         </Routes>
+
         <Footer />
+
+        {/* ✅ Toast Popup Component */}
+        <ToastContainer position="top-center" autoClose={3000} />
       </Router>
+
       <FloatingSocialMedia />
     </section>
   );
