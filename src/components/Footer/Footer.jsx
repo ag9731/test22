@@ -31,10 +31,10 @@ const Footer = () => {
           <div className="flex items-center gap-2">
             <FaEnvelope className="text-secondary" />
             <a
-              href="mailto:contact@parvidigital.com"
+              href="mailto:parvidigitalmarketing@gmail.com"
               className="text-1xl hover:text-secondary"
             >
-              <p>contact@parvidigital.com</p>
+              <p>parvidigitalmarketing@gmail.com</p>
             </a>
           </div>
         </div>
@@ -91,7 +91,7 @@ const Footer = () => {
               <FaInstagram />
             </a>
             <a
-              href="mailto:contact@parvidigital.com"
+              href="mailto:parvidigitalmarketing@gmail.com"
               className="text-2xl hover:text-secondary"
             >
               <FaEnvelopeSquare />

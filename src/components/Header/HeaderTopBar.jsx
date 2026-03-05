@@ -30,12 +30,12 @@ const HeaderTopBar = () => {
             </div>
           </a>
           <a
-            href="mailto:contact@parvidigital.com"
+            href="mailto:parvidigitalmarketing@gmail.com"
             className="text-1xl hover:text-secondary"
           >
             <div className="flex gap-5 items-center">
               <AiFillMail />
-              <p>contact@parvidigital.com</p>
+              <p>parvidigitalmarketing@gmail.com</p>
             </div>
           </a>
         </section>
@@ -44,7 +44,7 @@ const HeaderTopBar = () => {
         <section className="flex items-center">
           <div className="flex gap-5">
             <a
-              href="mailto:contact@parvidigital.com"
+              href="mailto:parvidigitalmarketing@gmail.com"
               className="text-2xl hover:text-secondary"
             >
               <FaEnvelopeSquare />
