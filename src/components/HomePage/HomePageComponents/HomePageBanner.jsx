@@ -5,7 +5,8 @@ import parviDigitalBannerImage from "../../../assets/Parvi_Digital_Marketing_Web
 import { AiFillQuestionCircle } from "react-icons/ai";
 import { motion } from "framer-motion";
 
-const text = "WEB DESIGNING AND DIGITAL MARKETING AGENCY IN BANGALORE, INDIA.";
+const text =
+  "WEBSITE DEVELOPERS AND DIGITAL MARKETING AGENCY IN BANGALORE, INDIA.";
 
 const HomePageBanner = () => {
   const form = useRef();
@@ -19,7 +20,7 @@ const HomePageBanner = () => {
         "service_x88g09g",
         "template_vq1ugun",
         form.current,
-        "ml4dB1qI77ZyKN9LM"
+        "6JItTTPHiIbzojkKP",
       )
       .then(
         () => {
@@ -30,7 +31,7 @@ const HomePageBanner = () => {
         () => {
           setShowPopup(true);
           setTimeout(() => setShowPopup(false), 3000);
-        }
+        },
       );
   };
 
@@ -52,47 +53,8 @@ const HomePageBanner = () => {
 
       <section className="bg-primary bg-opacity-5 min-h-[80vh] py-12 md:py-16 lg:py-0 lg:h-[80vh] flex items-center">
         <article className="flex flex-col-reverse lg:flex-row gap-10 container mx-auto px-4 md:px-6">
-          {/* Left Section */}
-          <div className="flex-1 flex flex-col justify-center gap-5 items-start">
-            <header className="flex flex-col gap-5">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium font-poppins leading-tight">
-                {text.split("").map((char, index) => (
-                  <motion.span
-                    key={index}
-                    initial={{ opacity: 0, y: 0 }}
-                    animate={{ opacity: 1, y: 10 }}
-                    transition={{ delay: index * 0.05, duration: 0.3 }}
-                  >
-                    {char}
-                  </motion.span>
-                ))}
-              </h1>
-
-              <div className="bg-secondary w-32 sm:w-40 md:w-52 h-[5px] rounded-full animate-slide-in"></div>
-
-              <h2 className="text-lg sm:text-xl font-poppins">
-                We also specialize in SEO and Mobile App Development Services
-              </h2>
-            </header>
-
-            <p className="font-poppins text-sm sm:text-base">
-              Our team helps businesses grow through innovative website design,
-              effective digital marketing strategies, and cutting-edge mobile
-              applications.
-            </p>
-
-            <a href="#contact-us">
-              <div className="flex items-center gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-primary mt-3">
-                <button className="font-semibold text-white font-poppins text-sm sm:text-base">
-                  Enquiry Now
-                </button>
-                <AiFillQuestionCircle className="fill-white text-lg sm:text-xl" />
-              </div>
-            </a>
-          </div>
-
           {/* Right Section – FORM */}
-          <aside className="flex-1 flex justify-center items-center lg:mt-0">
+          <aside className="flex-1 md:flex justify-center items-center lg:mt-0 hidden">
             <form
               ref={form}
               onSubmit={sendEmail}
@@ -149,6 +111,45 @@ const HomePageBanner = () => {
               </button>
             </form>
           </aside>
+
+          {/* Left Section */}
+          <div className="flex-1 flex flex-col justify-center gap-5 items-start">
+            <header className="flex flex-col gap-5">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium font-poppins leading-tight">
+                {text.split("").map((char, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0, y: 0 }}
+                    animate={{ opacity: 1, y: 10 }}
+                    transition={{ delay: index * 0.05, duration: 0.3 }}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </h1>
+
+              <div className="bg-secondary w-32 sm:w-40 md:w-52 h-[5px] rounded-full animate-slide-in"></div>
+
+              <h2 className="text-lg sm:text-xl font-poppins">
+                We also specialize in SEO and Mobile App Development Services
+              </h2>
+            </header>
+
+            <p className="font-poppins text-sm sm:text-base">
+              Our team helps businesses grow through innovative website design,
+              effective digital marketing strategies, and cutting-edge mobile
+              applications.
+            </p>
+
+            <a href="#contact-us">
+              <div className="flex items-center gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-primary mt-3">
+                <button className="font-semibold text-white font-poppins text-sm sm:text-base">
+                  Contact Us
+                </button>
+                <AiFillQuestionCircle className="fill-white text-lg sm:text-xl" />
+              </div>
+            </a>
+          </div>
         </article>
       </section>
     </>

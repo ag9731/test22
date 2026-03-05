@@ -14,6 +14,7 @@ import reactLogo from "./assets/react.svg";
 import Header from "./components/Header/Header";
 import Home from "./components/HomePage/Home";
 import Footer from "./components/Footer/Footer";
+import TawkTo from "./components/TawkTo";
 import Privacypolicy from "./components/PrivacyPolicy/Privacypolicy";
 import ScrollToTop from "./components/ScrollToTop";
 import FloatingSocialMedia from "./components/FloatingSocialMedia";
@@ -40,6 +41,7 @@ function App() {
   return (
     <section>
       <Router>
+        <TawkTo />
         <GAListener />
         <ScrollToTop />
         <Header />
