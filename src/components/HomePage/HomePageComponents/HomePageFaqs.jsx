@@ -8,17 +8,17 @@ const HomePageFaqs = () => {
     {
       id: 1,
       title: "What services does your website development agency offer?",
-      desc: "We specialize in website development in Bangalore, offering custom website design, eCommerce solutions, WordPress development, and more. Our expert website developers in Bangalore create high-performance websites tailored to your business needs.",
+      desc: "We specialize in website development, offering custom website design, eCommerce solutions, WordPress development, and more. Our expert website developers create high-performance websites tailored to your business needs.",
     },
     {
       id: 2,
-      title: "Why should I choose your digital marketing agency in Bangalore?",
-      desc: "As a leading digital marketing agency in Bangalore, we provide SEO, social media marketing, PPC, content marketing, and other online growth strategies to help businesses achieve their digital goals.",
+      title: "Why should I choose your digital marketing agency?",
+      desc: "As a leading digital marketing agency in, we provide SEO, social media marketing, PPC, content marketing, and other online growth strategies to help businesses achieve their digital goals.",
     },
     {
       id: 3,
-      title: "How much does website development cost in Bangalore?",
-      desc: "The cost of website development in Bangalore depends on factors like design complexity, features, and customization. Contact us for a free quote tailored to your requirements.",
+      title: "How much does website development cost?",
+      desc: "The cost of website development depends on factors like design complexity, features, and customization. Contact us for a free quote tailored to your requirements.",
     },
     {
       id: 4,
@@ -28,7 +28,7 @@ const HomePageFaqs = () => {
     {
       id: 5,
       title: "How long does it take to develop a website?",
-      desc: "The timeline for website development varies based on the project scope. A simple website may take 2–4 weeks, while a complex eCommerce platform can take 6–12 weeks. Our website developers in Bangalore ensure timely delivery with high-quality results.",
+      desc: "The timeline for website development varies based on the project scope. A simple website may take 2–4 weeks, while a complex eCommerce platform can take 6–12 weeks. Our website developers ensure timely delivery with high-quality results.",
     },
   ];
 
@@ -48,7 +48,7 @@ const HomePageFaqs = () => {
           </h1>
           <p className="font-poppins text-center text-gray-600 text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
             Here are answers to some common queries related to website
-            development in Bangalore, website design services, digital
+            development, website design services, digital
             marketing, and SEO to help you grow your online presence
             effectively.
           </p>

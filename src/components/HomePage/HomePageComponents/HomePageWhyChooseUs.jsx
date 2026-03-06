@@ -12,13 +12,13 @@ const HomePageWhyChooseUs = () => {
     {
       id: 1,
       icon: <AiOutlineLaptop className="text-xl md:text-2xl text-primary" />,
-      name: "Expert Website Developers in Bangalore",
+      name: "Expert Website Developers",
       desc: "Our skilled team of developers crafts custom websites that align with your brand and business goals. Whether you need an e-commerce site, corporate website, or a portfolio, we deliver top-notch solutions.",
     },
     {
       id: 2,
       icon: <FaRocket className="text-xl md:text-2xl text-primary" />,
-      name: "Comprehensive Digital Marketing Agency in Bangalore",
+      name: "Comprehensive Digital Marketing Agency",
       desc: "From SEO and social media marketing to PPC campaigns and content strategy, we offer end-to-end digital marketing services to enhance your online visibility and drive conversions.",
     },
     {
@@ -64,7 +64,7 @@ const HomePageWhyChooseUs = () => {
             <p className="text-justify text-sm md:text-base">
               At Parvi Digital, we are your trusted partner for website
               development and digital marketing solutions. As a leading website
-              development company in Bangalore, we specialize in creating
+              development company, we specialize in creating
               high-performing, user-friendly websites that drive results.
             </p>
 

@@ -5,8 +5,7 @@ import parviDigitalBannerImage from "../../../assets/Parvi_Digital_Marketing_Web
 import { AiFillQuestionCircle } from "react-icons/ai";
 import { motion } from "framer-motion";
 
-const text =
-  "WEBSITE DEVELOPERS AND DIGITAL MARKETING AGENCY IN BANGALORE, INDIA.";
+const text = "WEBSITE DEVELOPERS AND DIGITAL MARKETING AGENCY";
 
 const HomePageBanner = () => {
   const form = useRef();

@@ -53,7 +53,7 @@ const HomePageAboutUs = () => {
             <p className="w-full lg:w-[90%]">
               Empowering startups and businesses with cutting-edge website
               design, website development, mobile application development, seo,
-              and digital marketing agency in Bangalore. Partner with us to
+              and digital marketing agency. Partner with us to
               elevate your brand and drive growth in the digital world.
             </p>
             <a href="#contact-us">

@@ -64,7 +64,7 @@ const HomePageContactUs = () => {
               Get In Touch
             </h1>
             <p className="text-justify text-sm md:text-base mt-2 font-poppins">
-              Looking for a website designing company in Bangalore? Parvi
+              Looking for a website designing company? Parvi
               Digital builds stunning websites, apps, SEO, and digital
               marketing.
             </p>
