@@ -19,7 +19,7 @@ const Footer = () => {
         <div>
           <h2 className="text-xl font-semibold mb-3">Contact Us</h2>
           <div className="flex items-center gap-2 mb-2">
-            <FaMapMarkerAlt className="text-secondary" />
+            {/* <FaMapMarkerAlt className="text-secondary" /> */}
             {/* <p>RT Nagar, Dinnur, Bengaluru, Karnataka 560032</p> */}
           </div>
           <div className="flex items-center gap-2 mb-2">
