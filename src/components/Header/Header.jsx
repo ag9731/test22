@@ -37,7 +37,7 @@ const Header = () => {
     const query = event.target.value.toLowerCase();
     setSearchQuery(query);
     setFilteredServices(
-      services.filter((service) => service.name.toLowerCase().includes(query))
+      services.filter((service) => service.name.toLowerCase().includes(query)),
     );
     setShowResults(true);
   };
@@ -240,9 +240,9 @@ const Header = () => {
               </section>
 
               {/* Get In Touch Button */}
-              <button className="bg-primary px-10 py-2 rounded-lg text-white font-medium mt-4">
+              {/* <button className="bg-primary px-10 py-2 rounded-lg text-white font-medium mt-4">
                 Get Quote
-              </button>
+              </button> */}
             </section>
           )}
         </header>
