@@ -4,6 +4,7 @@ import logo from "../../assets/parvi digital company bangalore logo.png";
 import GetQuote from "./GetQuote";
 import HeaderTopBar from "./HeaderTopBar";
 import { Link } from "react-router-dom";
+import AnnouncementBar from "./AnnouncementBar";
 
 const Header = () => {
   const services = [
@@ -55,6 +56,7 @@ const Header = () => {
 
   return (
     <React.Fragment>
+      <AnnouncementBar/>
       <HeaderTopBar />
       <main className="bg-white shadow-sm bg-opacity-5">
         {/* Desktop Menu */}

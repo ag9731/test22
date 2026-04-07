@@ -23,10 +23,11 @@ const HeaderTopBar = () => {
       <section className="container mx-auto flex  justify-between text-white">
         {/* Left Section */}
         <section className="flex items-center gap-5">
-          <a href="tel:9731761287" className="text-1xl hover:text-secondary">
+          <a href="tel:76191 03418" className="text-1xl hover:text-secondary">
             <div className="flex gap-2 items-center">
               <AiFillPhone />
-              <p>91 97317 61287</p> |<p>91 63601 88397</p>
+              <p>91 76191 03418</p>
+              {/* |<p>91 63601 88397</p> */}
             </div>
           </a>
           <a
