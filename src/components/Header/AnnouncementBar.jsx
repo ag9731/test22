@@ -15,7 +15,7 @@ const AnnouncementBar = () => {
           href="#contact-us"
           className="bg-white text-orange-600 font-semibold px-5 py-2 rounded-full text-sm md:text-base hover:bg-gray-100 transition"
         >
-          Get Started
+          Get-Started
         </a>
       </div>
     </div>
