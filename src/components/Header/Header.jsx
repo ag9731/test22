@@ -56,7 +56,7 @@ const Header = () => {
 
   return (
     <React.Fragment>
-      <AnnouncementBar/>
+      {/* <AnnouncementBar/> */}
       <HeaderTopBar />
       <main className="bg-white shadow-sm bg-opacity-5">
         {/* Desktop Menu */}
