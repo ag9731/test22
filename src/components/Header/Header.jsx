@@ -1,250 +1,224 @@
 import React, { useState, useEffect, useRef } from "react";
-import { AiOutlineSearch, AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineMenu, AiOutlineDown } from "react-icons/ai";
 import logo from "../../assets/parvi digital company bangalore logo.png";
-import GetQuote from "./GetQuote";
 import HeaderTopBar from "./HeaderTopBar";
-import { Link } from "react-router-dom";
-import AnnouncementBar from "./AnnouncementBar";
-
+import { Link, useLocation } from "react-router-dom";
 const Header = () => {
-  const services = [
-    { id: 1, name: "Website Design And Development", link: "#what-we-do" },
-    {
-      id: 2,
-      name: "Mobile Application Design And Development",
-      link: "#what-we-do",
-    },
-    { id: 3, name: "Digital Marketing", link: "#what-we-do" },
-    { id: 4, name: "Search Engine Optimization", link: "#what-we-do" },
-    { id: 5, name: "Graphic Design", link: "#what-we-do" },
-    { id: 6, name: "Social Media Marketing", link: "#what-we-do" },
-    { id: 7, name: "Email Marketing", link: "#what-we-do" },
-  ];
-
-  const [searchQuery, setSearchQuery] = useState("");
-  const [filteredServices, setFilteredServices] = useState(services);
-  const [showResults, setShowResults] = useState(false);
   const [menu, setMenu] = useState(false);
-  const searchRef = useRef(null);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  const location = useLocation();
 
   const handleOpen = () => setMenu((prev) => !prev);
-
   const closeMenu = () => {
     setMenu(false);
+    setMobileDropdownOpen(false);
   };
 
-  // Handle Search Input Change
-  const handleSearchBar = (event) => {
-    const query = event.target.value.toLowerCase();
-    setSearchQuery(query);
-    setFilteredServices(
-      services.filter((service) => service.name.toLowerCase().includes(query)),
-    );
-    setShowResults(true);
-  };
-
-  // Hide dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (searchRef.current && !searchRef.current.contains(event.target)) {
-        setShowResults(false);
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
       }
     };
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const serviceCategories = [
+    {
+      title: "WEBSITE DEVELOPMENT",
+      links: [
+        { name: "Website Design & Development", path: "/website-development" },
+        { name: "Business Website Development", path: "/business-website-development" },
+        { name: "E-commerce Website Development", path: "/ecommerce-website-development" },
+        { name: "Website Redesign", path: "/website-redesign" },
+        { name: "Web Application Development", path: "/web-application-development" },
+        { name: "Mobile App Development", path: "/mobile-app-development" },
+      ]
+    },
+    {
+      title: "DIGITAL MARKETING",
+      links: [
+        { name: "Digital Marketing Services", path: "/digital-marketing" },
+        { name: "Google Ads Management", path: "/google-ads-management" },
+        { name: "Meta Ads Management", path: "/meta-ads-management" },
+        { name: "Social Media Marketing", path: "/social-media-marketing" },
+        { name: "Lead Generation", path: "/lead-generation" },
+      ]
+    },
+    {
+      title: "SEARCH ENGINE OPTIMIZATION",
+      links: [
+        { name: "SEO Services", path: "/seo-services" },
+        { name: "Local SEO", path: "/local-seo" },
+        { name: "Technical SEO", path: "/technical-seo" },
+        { name: "On-Page SEO", path: "/on-page-seo" },
+      ]
+    },
+    {
+      title: "GOOGLE BUSINESS PROFILE",
+      links: [
+        { name: "GBP Optimization", path: "/google-business-profile-optimization" },
+        { name: "Google Maps Ranking", path: "/google-maps-ranking" },
+        { name: "GBP Management", path: "/google-business-profile-management" },
+      ]
+    },
+    {
+      title: "AI AUTOMATION",
+      links: [
+        { name: "AI Automation Services", path: "/ai-automation" },
+        { name: "AI Chatbot Development", path: "/ai-chatbot-development" },
+        { name: "Business Process Automation", path: "/business-process-automation" },
+      ]
+    }
+  ];
 
   return (
     <React.Fragment>
-      {/* <AnnouncementBar/> */}
+
       <HeaderTopBar />
-      <main className="bg-white shadow-sm bg-opacity-5">
+      <main className="bg-white shadow-sm sticky top-0 z-50">
         {/* Desktop Menu */}
-        <header className="container mx-auto lg:flex md:flex items-center justify-between hidden">
-          {/* Logo */}
+        <header className="container mx-auto lg:flex md:flex items-center justify-between hidden py-2">
           <section>
-            <figure>
+            <Link to="/">
               <img
                 src={logo}
-                className="w-[100%] max-w-32"
-                alt="Parvi Digital Marketing and Web Design Company in Bangalore"
+                className="w-[100%] max-w-[120px]"
+                alt="Parvi Digital Marketing and Web Design Company"
               />
-            </figure>
+            </Link>
           </section>
 
-          {/* Navigation Menu */}
-          <section className="flex items-center gap-16">
+          <section className="flex items-center gap-10">
             <nav>
-              <ul className="flex items-center gap-14">
+              <ul className="flex items-center gap-8 font-medium text-gray-700">
                 <li>
-                  {/* <a href="#">Home</a> */}
-                  <Link to="/" className="uppercase">
-                    Home
+                  <Link to="/" className={`uppercase hover:text-primary transition-colors ${location.pathname === '/' ? 'text-primary' : ''}`}>Home</Link>
+                </li>
+                <li>
+                  <Link to="/about-us" className={`uppercase hover:text-primary transition-colors ${location.pathname === '/about-us' ? 'text-primary' : ''}`}>About Us</Link>
+                </li>
+                
+                {/* Services Dropdown */}
+                <li className="relative" ref={dropdownRef} onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)}>
+                  <Link to="/services" className={`uppercase hover:text-primary transition-colors flex items-center gap-1 ${location.pathname.includes('/services') || location.pathname.includes('-') ? 'text-primary' : ''}`}>
+                    Services <AiOutlineDown size={14} />
                   </Link>
+                  
+                  {/* Mega Menu Dropdown */}
+                  {dropdownOpen && (
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-0 w-[800px] bg-white border border-gray-100 shadow-xl rounded-b-xl p-6 grid grid-cols-3 gap-6 z-50">
+                      {serviceCategories.map((category, index) => (
+                        <div key={index}>
+                          <h4 className="text-sm font-bold text-gray-900 mb-3 border-b pb-2 uppercase tracking-wide">{category.title}</h4>
+                          <ul className="flex flex-col gap-2">
+                            {category.links.map((link, idx) => (
+                              <li key={idx}>
+                                <Link 
+                                  to={link.path} 
+                                  className="text-sm text-gray-600 hover:text-primary transition-colors block"
+                                  onClick={() => setDropdownOpen(false)}
+                                >
+                                  {link.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                      <div className="col-span-3 mt-4 pt-4 border-t text-center">
+                        <Link to="/services" onClick={() => setDropdownOpen(false)} className="text-primary font-semibold hover:underline">View All Services &rarr;</Link>
+                      </div>
+                    </div>
+                  )}
+                </li>
+
+                <li>
+                  <Link to="/projects" className={`uppercase hover:text-primary transition-colors ${location.pathname === '/projects' ? 'text-primary' : ''}`}>Projects</Link>
                 </li>
                 <li>
-                  <a href="#about-us" className="uppercase">
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a href="#our-services" className="uppercase">
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://l.instagram.com/?u=https%3A%2F%2Flinktr.ee%2Fparvi_digital%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAadEGIEhI2himC7Zpt40a2HCC-5E0OuQDL-9eKMo7BNflSMXfnbO3RzGkSMS0Q_aem_UU-t6fbrRaClk_Eh6T60BA&e=AT1qowoNGC_E8XAwXFT9uJRRM3eN94-84E5I8yN_7Kby_sD5u5B7-NYkPlNNM3ysZasTqDCZhLY0dvNwrfMAjIZ6ATps1vQwxJUSDfnUrBJ7OhpIHLJ_CpY"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="uppercase"
-                  >
-                    Projects
-                  </a>
-                </li>
-                <li>
-                  <a href="#contact-us" className="uppercase">
-                    Contact
-                  </a>
+                  <Link to="/contact-us" className={`uppercase hover:text-primary transition-colors ${location.pathname === '/contact-us' ? 'text-primary' : ''}`}>Contact Us</Link>
                 </li>
               </ul>
             </nav>
 
-            {/* Search Bar */}
-            <section className="relative" ref={searchRef}>
-              {/* <div className="flex items-center relative">
-                <input
-                  type="search"
-                  className="px-2 py-1 border-[1px] rounded-md border-primary"
-                  placeholder="Search Services"
-                  value={searchQuery}
-                  onChange={handleSearchBar}
-                  onFocus={() => setShowResults(true)}
-                />
-              </div> */}
-
-              {/* Display Filtered Results */}
-              {showResults && (
-                <ul className="absolute w-72 bg-white border border-gray-300 rounded-md mt-2 p-2 shadow-md z-50">
-                  {filteredServices.length > 0 ? (
-                    filteredServices.map((service) => (
-                      <li
-                        key={service.id}
-                        className="py-2 px-3 hover:bg-gray-100 cursor-pointer"
-                        onClick={() => setShowResults(false)}
-                      >
-                        <a href={service.link}>{service.name}</a>
-                      </li>
-                    ))
-                  ) : (
-                    <li className="text-gray-500 px-3 py-2">
-                      No results found
-                    </li>
-                  )}
-                </ul>
-              )}
-            </section>
-
-            {/* Get In Touch Button */}
-            <a href="#contact-us">
-              <button className="bg-primary px-10 py-2 rounded-lg text-white font-medium">
-                Get Quote
+            <Link to="/contact-us">
+              <button className="bg-primary hover:bg-blue-700 transition-colors px-6 py-2.5 rounded-lg text-white font-semibold shadow-sm">
+                Let's Talk
               </button>
-            </a>
+            </Link>
           </section>
         </header>
 
         {/* Mobile Menu */}
-        <header className="container mx-auto flex lg:hidden md:hidden items-center justify-between relative py-4 px-4 lg:px-0 md:px-0">
-          {/* Logo */}
+        <header className="container mx-auto flex lg:hidden md:hidden items-center justify-between relative py-2 px-4">
           <section>
-            <figure>
+            <Link to="/" onClick={closeMenu}>
               <img
                 src={logo}
-                className="w-[100%] max-w-32"
-                alt="Parvi Digital Marketing and Web Design Company in Bangalore"
+                className="max-w-[90px]"
+                alt="Parvi Digital"
               />
-            </figure>
+            </Link>
           </section>
 
-          {/* Mobile Menu Icon */}
-          <button onClick={handleOpen} className="text-3xl">
+          <button onClick={handleOpen} className="text-3xl text-gray-800 focus:outline-none">
             {menu ? <AiOutlineClose className="z-50" /> : <AiOutlineMenu />}
           </button>
 
-          {/* Mobile Navigation Menu */}
           {menu && (
-            <section className="absolute top-32  left-0 w-full bg-slate-200 shadow-md p-5 flex flex-col items-center">
-              <nav>
-                <ul className="flex flex-col gap-4 text-center">
+            <section className="absolute top-full left-0 w-full bg-white shadow-lg border-t z-50 max-h-[80vh] overflow-y-auto">
+              <nav className="p-4">
+                <ul className="flex flex-col gap-4 font-medium text-gray-800">
                   <li>
-                    {/* <a href="#">Home</a> */}
-                    <Link to="/" className="uppercase">
-                      Home
+                    <Link to="/" onClick={closeMenu} className="block w-full py-2 border-b">Home</Link>
+                  </li>
+                  <li>
+                    <Link to="/about-us" onClick={closeMenu} className="block w-full py-2 border-b">About Us</Link>
+                  </li>
+                  
+                  {/* Mobile Accordion for Services */}
+                  <li>
+                    <div className="flex justify-between items-center w-full py-2 border-b cursor-pointer" onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}>
+                      <span>Services</span>
+                      <AiOutlineDown className={`transition-transform ${mobileDropdownOpen ? 'rotate-180' : ''}`} />
+                    </div>
+                    
+                    {mobileDropdownOpen && (
+                      <div className="pl-4 mt-2 flex flex-col gap-4 bg-gray-50 p-4 rounded-lg">
+                        {serviceCategories.map((category, index) => (
+                          <div key={index}>
+                            <h4 className="text-xs font-bold text-gray-900 mb-2 uppercase">{category.title}</h4>
+                            <ul className="flex flex-col gap-2 border-l-2 border-gray-200 pl-2">
+                              {category.links.map((link, idx) => (
+                                <li key={idx}>
+                                  <Link to={link.path} onClick={closeMenu} className="text-sm text-gray-600 block py-1">{link.name}</Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                        <Link to="/services" onClick={closeMenu} className="text-sm text-primary font-bold mt-2">View All Services</Link>
+                      </div>
+                    )}
+                  </li>
+
+                  <li>
+                    <Link to="/projects" onClick={closeMenu} className="block w-full py-2 border-b">Projects</Link>
+                  </li>
+                  <li>
+                    <Link to="/contact-us" onClick={closeMenu} className="block w-full py-2 border-b">Contact Us</Link>
+                  </li>
+                  <li className="pt-4">
+                    <Link to="/contact-us" onClick={closeMenu} className="block w-full text-center bg-primary text-white py-3 rounded-lg font-bold">
+                      Let's Talk
                     </Link>
-                  </li>
-                  <li onClick={closeMenu}>
-                    <a href="#about-us" className="uppercase">
-                      About
-                    </a>
-                  </li>
-                  <li onClick={closeMenu}>
-                    <a href="#our-services" className="uppercase">
-                      Services
-                    </a>
-                  </li>
-                  <li onClick={closeMenu}>
-                    <a href="#what-we-do" className="uppercase">
-                      Projects
-                    </a>
-                  </li>
-                  <li onClick={closeMenu}>
-                    <a href="#contact-us" className="uppercase">
-                      Contact
-                    </a>
                   </li>
                 </ul>
               </nav>
-
-              {/* Search Bar */}
-              <section className="relative w-full mt-4" ref={searchRef}>
-                <div className="flex items-center relative w-full">
-                  <input
-                    type="search"
-                    className="px-2 py-1 border-[1px] rounded-md border-primary w-full"
-                    placeholder="Search Services"
-                    value={searchQuery}
-                    onChange={handleSearchBar}
-                    onFocus={() => setShowResults(true)}
-                  />
-                </div>
-
-                {/* Display Filtered Results */}
-                {showResults && (
-                  <ul className="absolute w-full bg-white border border-gray-300 rounded-md mt-2 p-2 shadow-md z-50">
-                    {filteredServices.length > 0 ? (
-                      filteredServices.map((service) => (
-                        <li
-                          key={service.id}
-                          className="py-2 px-3 hover:bg-gray-100 cursor-pointer"
-                          onClick={() => setShowResults(false)}
-                        >
-                          <a href={service.link}>{service.name}</a>
-                        </li>
-                      ))
-                    ) : (
-                      <li className="text-gray-500 px-3 py-2">
-                        No results found
-                      </li>
-                    )}
-                  </ul>
-                )}
-              </section>
-
-              {/* Get In Touch Button */}
-              {/* <button className="bg-primary px-10 py-2 rounded-lg text-white font-medium mt-4">
-                Get Quote
-              </button> */}
             </section>
           )}
         </header>
